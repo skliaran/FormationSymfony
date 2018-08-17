@@ -57,7 +57,19 @@ class LivreController extends Controller
             'livres' => $livres
         ]);
     }
-    
+    /**
+     * @Route("/titre", name="titrebooks")
+     * @Method({"POST","GET"})
+     */
+    public function titreAction(Request $request)
+    {
+        $doctrine = $this -> getDoctrine();
+        $repository = $doctrine ->getRepository("BiblioBundle:Livre");
+        $livres = $repository->getCollections();
+        return $this->render('@Biblio/Livre/titre.html.twig', [
+            'editeurs' => $livres
+        ]);
+    }
     /**
      * @Route("/modify/{id}", name="modifybooks")
      * @Method({"POST","GET"})

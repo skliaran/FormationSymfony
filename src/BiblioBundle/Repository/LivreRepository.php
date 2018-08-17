@@ -10,4 +10,9 @@ namespace BiblioBundle\Repository;
  */
 class LivreRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getCollections(){
+        $gb = $this -> createQueryBuilder('l');
+        $gb -> select('l.titre','l.auteur')->groupBy('l.titre');
+        return $gb->getQuery()->getResult();
+    }
 }

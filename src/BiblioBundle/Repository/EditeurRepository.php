@@ -10,4 +10,6 @@ namespace BiblioBundle\Repository;
  */
 class EditeurRepository extends \Doctrine\ORM\EntityRepository
 {
+    
+    
 }
