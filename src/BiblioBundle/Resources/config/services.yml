@@ -1,0 +1,9 @@
+services:
+#    biblio.example:
+#        class: BiblioBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    biblio.service1:
+        class: BiblioBundle\Services\Service1
+    biblio.editeurmanager:
+        class: BiblioBundle\Services\EditeurManager
+        arguments: ["@doctrine.orm.entity_manager"]    
